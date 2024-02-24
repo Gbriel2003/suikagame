@@ -17,6 +17,7 @@ public class inicio extends javax.swing.JFrame {
         this.setContentPane(fondo);
         initComponents();
         botontransparente();
+        this.setLocationRelativeTo(null);
     }
     public void botontransparente(){
         jugar.setOpaque(false);
@@ -43,17 +44,26 @@ public class inicio extends javax.swing.JFrame {
         salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jugar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Imagen1_off.png"))); // NOI18N
         jugar.setText("jugar");
+        jugar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jugar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/jugar1.png"))); // NOI18N
+        jugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jugarActionPerformed(evt);
+            }
+        });
 
         puntaje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/puntaje1.png"))); // NOI18N
         puntaje.setText("puntaje");
+        puntaje.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         puntaje.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/puntaje.png"))); // NOI18N
 
         salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir1.png"))); // NOI18N
         salir.setText("salir");
+        salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         salir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
         salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +107,12 @@ public class inicio extends javax.swing.JFrame {
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         this.dispose();
     }//GEN-LAST:event_salirActionPerformed
+
+    private void jugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugarActionPerformed
+        this.setVisible(false);
+        juego c = new juego();
+        c.setVisible(true);
+    }//GEN-LAST:event_jugarActionPerformed
 
     /**
      * @param args the command line arguments
