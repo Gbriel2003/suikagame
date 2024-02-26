@@ -2,6 +2,8 @@ package Main;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.util.List;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -12,12 +14,40 @@ import javax.swing.JPanel;
 public class inicio extends javax.swing.JFrame {
     
     FondoPanel fondo = new FondoPanel();
-    
+    List<Fruta> listafrutas = new ArrayList<>();
+    int caida = 5;
+        
     public inicio() {
         this.setContentPane(fondo);
         initComponents();
         botontransparente();
         this.setLocationRelativeTo(null);
+        
+        Fruta datil = new Fruta("datil", "datil.png" , 1, false, 2, caida);
+        Fruta cotoperi = new Fruta("cotoperi", "cotoperi.png" , 2, false, 4, caida);
+        Fruta mamey = new Fruta("mamey", "mamey.png" , 3, false, 6, caida);
+        Fruta cereza = new Fruta("cereza", "cereza.png" , 4, false, 8, caida);
+        Fruta pumalaca = new Fruta("pumalaca", "pumalaca.png" , 5, false, 10, caida);
+        Fruta kiwi = new Fruta("kiwi", "kiwi.png" , 6, false, 12, caida);
+        Fruta parchita = new Fruta("parchita", "parchita.png" , 7, false, 14, caida);
+        Fruta mango = new Fruta("mango", "mango.png" , 8, false, 16, caida);
+        Fruta coco = new Fruta("coco", "coco.png" , 9, false, 18, caida);
+        Fruta patilla = new Fruta("patilla", "patilla.png" , 10, false, 20, caida);
+        
+        
+        listafrutas.add(datil);
+        listafrutas.add(cotoperi);
+        listafrutas.add(mamey);
+        listafrutas.add(cereza);
+        listafrutas.add(pumalaca);
+        listafrutas.add(kiwi);
+        listafrutas.add(parchita);
+        listafrutas.add(mango);
+        listafrutas.add(coco);
+        listafrutas.add(patilla);
+        
+    
+        
     }
     public void botontransparente(){
         jugar.setOpaque(false);
@@ -47,7 +77,6 @@ public class inicio extends javax.swing.JFrame {
         setResizable(false);
 
         jugar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Imagen1_off.png"))); // NOI18N
-        jugar.setText("jugar");
         jugar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jugar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/jugar1.png"))); // NOI18N
         jugar.addActionListener(new java.awt.event.ActionListener() {
@@ -57,12 +86,10 @@ public class inicio extends javax.swing.JFrame {
         });
 
         puntaje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/puntaje1.png"))); // NOI18N
-        puntaje.setText("puntaje");
         puntaje.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         puntaje.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/puntaje.png"))); // NOI18N
 
         salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir1.png"))); // NOI18N
-        salir.setText("salir");
         salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         salir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
         salir.addActionListener(new java.awt.event.ActionListener() {
@@ -79,15 +106,15 @@ public class inicio extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(315, 315, 315)
-                        .addComponent(jugar, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jugar, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(294, 294, 294)
-                        .addComponent(puntaje, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(276, Short.MAX_VALUE))
+                        .addComponent(puntaje, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(285, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(salir, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(309, 309, 309))
+                .addComponent(salir, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(318, 318, 318))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,8 +182,8 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
 }
-     class FondoPanel extends JPanel
-     {
+     class FondoPanel extends JPanel{
+         
          private Image imagen;
          
          @Override

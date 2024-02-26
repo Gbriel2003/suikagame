@@ -1,12 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Main;
 
+import java.awt.BasicStroke;
+import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.List;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -18,13 +17,13 @@ public class juego extends javax.swing.JFrame {
 
    FondoPanel1 fondo = new FondoPanel1();
    
-   
     public juego() {
         this.setContentPane(fondo);
         initComponents();
         this.setLocationRelativeTo(null);
         botontransparente();
     }
+    
     public void botontransparente(){
         volver.setOpaque(false);
         volver.setContentAreaFilled(false);
@@ -40,12 +39,12 @@ public class juego extends javax.swing.JFrame {
     private void initComponents() {
 
         volver = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver1.png"))); // NOI18N
-        volver.setText("volver");
         volver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         volver.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
         volver.addActionListener(new java.awt.event.ActionListener() {
@@ -54,6 +53,9 @@ public class juego extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ciclado.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -61,12 +63,18 @@ public class juego extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(volver, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 713, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(volver)
-                .addGap(0, 380, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(169, Short.MAX_VALUE))
         );
 
         pack();
@@ -114,18 +122,34 @@ public class juego extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }
-        class FondoPanel1 extends JPanel
-     {
+        class FondoPanel1 extends JPanel{
+            
          private Image imagen;
          
+         @Override
          public void paint (Graphics g){
          
                 imagen = new ImageIcon(getClass().getResource("/imagenes/maderafondo1.png")).getImage();
                 
                 g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+                
+                Graphics2D g2d = (Graphics2D) g;
+                g2d.setStroke(new BasicStroke(5));
+                
+                g.setColor(Color.RED);
+                int x1 = getWidth() - 50;
+                int y1 = getHeight() - 50;
+                int x2 = getWidth() - 350;
+                int y2 = getHeight() - 50;
+
+                g2d.drawLine(x1, y1, x2, y2);
+                g2d.drawLine(x2, y2, x2, y2 - 250);
+                g2d.drawLine(x2, y2 - 250, x1, y2 - 250);
+                g2d.drawLine(x1, y2 - 250, x1, y1);
                 
                 setOpaque(false);
                 

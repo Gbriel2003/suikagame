@@ -26,21 +26,21 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="315" max="-2" attributes="0"/>
-                      <Component id="jugar" min="-2" pref="169" max="-2" attributes="0"/>
+                      <Component id="jugar" min="-2" pref="157" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="294" max="-2" attributes="0"/>
-                      <Component id="puntaje" min="-2" pref="213" max="-2" attributes="0"/>
+                      <Component id="puntaje" min="-2" pref="204" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="276" max="32767" attributes="0"/>
+              <EmptySpace pref="285" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="salir" min="-2" pref="149" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="309" max="-2" attributes="0"/>
+              <Component id="salir" min="-2" pref="140" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="318" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -64,7 +64,6 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/imagenes/Imagen1_off.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="jugar"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Cursor de Mano"/>
         </Property>
@@ -81,7 +80,6 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/imagenes/puntaje1.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="puntaje"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Cursor de Mano"/>
         </Property>
@@ -95,7 +93,6 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/imagenes/salir1.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="salir"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Cursor de Mano"/>
         </Property>
